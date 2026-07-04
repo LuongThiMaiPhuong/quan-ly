@@ -1,0 +1,255 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+\usepackage{titling}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
+\renewcommand{\baselinestretch}{1.2}
+\usepackage[left=3.00cm, right=2.00cm, top=2.50cm, bottom=3.0cm]{geometry}
+
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Dương Huy Hoàng}
+\lhead{Tổng hợp kiến thức Giải tích 2}
+\cfoot{\thepage}
+\renewcommand{\footrulewidth}{1pt} % do dai duong ngang footer
+%\lfoot{\leftmark}
+
+\author{Dương Huy Hòang}
+\title{Tổng hợp kiến thức Giải tích 2}
+\begin{document}
+	\begin{titlingpage}
+	\maketitle
+	\end{titlingpage}
+	\pagebreak
+	\tableofcontents
+	\pagebreak
+	\part{Hàm nhiều biến số}
+	\section{Giới hạn, liên tục}
+	\subsection{Giới hạn kép}
+	
+	- Dùng định lý kẹp.
+	
+	- Cho hàm số tiến theo các đường thẳng $y = kx$, $y=kx^2$...
+	 
+	- Chọn các dãy tương ứng.
+	
+	VD:
+	\begin{center}
+	$ (x,y) \to (0,0) $ tương đương với $ (\dfrac{1}{n},\dfrac{1}{n}) \to (0,0) $ khi $n\to \infty$ \\
+	\end{center}
+	\subsection{Giới hạn lặp}
+	\begin{center}
+	$$\lim_{x\to a_1}\lim_{y\to a_2}f(x,y)$$
+	\end{center}
+	
+	Bước 1: Gọi $x$ là tham số tính $\lim_{y\to a_2}f(x,y) = g(x)$.
+	
+	Bước 2: Tính $\lim_{x\to a1} g(x)$.
+	
+	\subsection{Liên tục đều}
+	 Hàm $ f(x,y) $ gọi là liên tục đều trên $D$ nếu $ \forall \varepsilon>0, \exists \delta  > 0,\forall {M_1}({x_1},{y_1}),{M_2}({x_2},{y_2}):0 \le |{M_1}{M_2}| \le \varepsilon   $
+	 \[ |f({x_1},{y_1})-f({x_2},{y_2})| < \varepsilon  \]
+	 
+	 Để chứng minh hàm số không liên tục đều ta chỉ cần chỉ ra 2 dãy điểm $ a^{(k)}, b^{(k)}  \in D $ sao cho $ ||a^{(k)} - b^{(k)}|| \to 0 $ nhưng $ |f(a^{(k)}) - f(b^{(k)})| \nrightarrow 0 $ thì hàm $ f(x,y) $ không liên tục đều trên $ D $;
+	 
+
+	\subsection{Chú ý} 
+	
+	- Giới hạn lặp không kéo theo giới hạn kép và ngược lại
+	
+	- Giả sử $ \lim_{(x,y) \to (a_1, a_2)} f(x,y) $ tồn tại và $ \lim_{y \to a_2} f(x,y) $ tồn tại thì \\ $ \lim_{x \to a_1} \lim_{y \to a_2} f(x,y) $ tồn tại và bằng giới hạn kép.
+	
+	- Một số vô cùng bé cần chú ý
+
+	+) Khi $ x \to 0 $ thì
+	$$ \sin x \ \sim  \tan x \sim  \arcsin x \sim  \arctan x \sim  e^x-1 \sim  \frac{a^x-1}{\ln x} \sim \ln(1+x) \sim  x $$
+	$$ (1+x)^\alpha - 1 \sim \alpha x ; \sqrt[m]{{1 + \alpha x}} - 1 \sim \frac{\alpha x}{m} ; 1 - \cos x \sim \frac{x^2}{2} ; (1 + x)^{\frac{1}{x}} \sim e $$
+	
+	+) Khi $ x \to \infty $ thì
+	\[ (1+\frac{1}{x})^x \sim e \]
+	
+	\section{Đạo hàm, vi phân}
+	\subsection{Đạo hàm riêng}
+	Cho $ x_0 $ một số gia $ \Delta x $ khi đó biểu thức \[ \Delta x = f(x_0 + \Delta x, y_0)-f(x_0,y_0) \] gọi là số gia riêng của $ f(x,y) $ theo $ x $. Vậy đạo hàm của $ u=f(x,y) $ tại điểm $ x=x_0 $ là giới hạn \[ \lim_{\Delta x\to 0} \dfrac{\Delta_x u}{\Delta x} = \lim_{\Delta x\to 0} \dfrac{f(x_0 + \Delta x, y_0)-f(x_0,y_0)}{\Delta x}  \]
+	
+	Đạo hàm này gọi là đạo hàm riêng của $ u=f(x,y) $ theo biến $ x $ tại $ M_0(x_0,y_0) $ ký hiệu $ f^{'} (x_0,y_0) $ hay $ \dfrac {\partial f}{\partial x}(x_0,y_0)  $ hay $ \dfrac {\partial u}{\partial x}(x_0,y_0)  $.
+	
+	Tương tự với đạo hàm riêng của $ u=f(x,y) $ theo biến $ y $ tại $ M_0 $
+	\subsection{Vi phân}
+	\textbf {Vi phân toàn phần} \[ df(x,y)=\dfrac {\partial f(x,y)}{\partial x}dx + \dfrac {\partial f(x,y)}{\partial y}dy \]
+	
+	\textbf {Điều kiện cần và đủ để hàm $ u=f(x,y) $ khả vi tại $ M_0(x_0,y_0)$} 
+	: Nếu hàm $ u=f(x,y) $ có các đạo hàm riêng trong lân cận điểm $ M_0(x_0,y_0) $ và các đạo hàm riêng ấy liên tục tại $ M_0 $ thì hàm $ f(x,y) $ khả vi tại $ M_0 $ và ta có \[ du=df=f^{'}x\Delta x f^{'}y\Delta y = f^{'}x dx + f^{'}y dy \].
+	
+	\textbf {Phương pháp kiểm tra tính khả vi của hàm số }
+	
+	\textit {Cách 1:}
+	\[ \Delta u = f^{'}x (x_0,y_0) \Delta x + f^{'}y (x_0,y_0) \Delta y + \varepsilon (\Delta x, \Delta y) \sqrt{\Delta x^2 + \Delta y^2} \]
+	
+	Nếu $ \varepsilon (\Delta x, \Delta y) $ là một vô cùng bé thì hàm số khả vi, nếu không là vô cùng bé thì hàm số không khả vi.
+	
+	$ \varepsilon (\Delta x, \Delta y) $ là vô cùng bé khi và chỉ khi 
+	$\begin{cases}
+	 \Delta x \to 0 \\
+	 \Delta y \to 0 
+	\end{cases}$
+	hay $ \sqrt{\Delta x^2 + \Delta y^2} \to 0 $
+	
+	\textit {Cách 2:} Dùng định lý ở trên
+	
+	\medskip
+	
+	\textbf {Công thức tính gần đúng giá trị của hàm số }
+	\[ f(x_0+\Delta x, y_0+\Delta y) \simeq f(x_0,y_0) + f^{'}x(x_0,y_0)\Delta x + f^{'}y(x_0,y_0)\Delta y\]
+	
+	\subsection{Đạo hàm riêng cấp cao và vi phân cấp cao}
+	\textbf {Định nghĩa đạo hàm riêng cấp cao:} Cho hàm $ u=f(x,y) $ xác định trong miền $ D $ có các đạo hàm riêng cấp 1 $ f^{'}x, f^{'}y $. Các đạo hàm riêng của các đạo hàm riêng cấp 1 nếu tồn tại thì gọi là các đạo hàm riêng cấp 2. Vậy ta có các đạo hàm riêng cấp 2 của hàm số $ u=f(x,y) $
+	\[\dfrac {\partial}{\partial x}(\dfrac {\partial f}{\partial x}) = \dfrac {\partial^2 f}{\partial x^2} = f^{''}_{x^2}(x,y) \]
+	\[\dfrac {\partial}{\partial y}(\dfrac {\partial f}{\partial x}) = \dfrac {\partial^2 f}{\partial x\partial y} = f^{''}_{xy}(x,y) \]
+	\[\dfrac {\partial}{\partial y}(\dfrac {\partial f}{\partial y}) = \dfrac {\partial^2 f}{\partial y^2} = f^{''}_{y^2}(x,y) \]
+	\[\dfrac {\partial}{\partial x}(\dfrac {\partial f}{\partial y}) = \dfrac {\partial^2 f}{\partial y\partial x} = f^{''}_{yx}(x,y) \]
+	\textbf {Định lý Schwartz:} Nếu trong một lân cận của điểm $ (x_0, y_0) $ tồn tại các đạo hàm riêng hỗn hợp $ f^{''}_{xy}(x,y), f^{''}_{yx}(x,y) $ và các đạo hàm riêng này liên tục tại $ (x_0, y_0) $ thì chúng bằng nhau tại $ (x_0, y_0) $:
+	\[  f^{''}_{xy}(x_0,y_0) = f^{''}_{yx}(x_0,y_0)  \]
+	
+	\textbf {Công thức tính vi phân cấp cao:} Khi $ x, y $ là những biến độc lập, các số gia $ dx=\Delta x, dy=\Delta y $ không phụ thuộc vào $ x, y $. Giả sử tồn tại $ d^2f $ thì
+	\begin{align*}
+		d^2f&=d(df)=d(f^{'}_xdx + f^{'}_ydy);\\
+		&=(f^{'}_xdx + f^{'}_ydy)^{'}_xdx + (f^{'}_xdx + f^{'}_ydy)^{'}_ydy; \\
+		&=f^{''}_{x^2}(dx)^2 +(f^{''}_{yx}f^{''}_{xy})dxdy + f^{''}_{y^2}(dy)^2
+	\end{align*}
+	
+	Nếu $ f^{''}_{yx}, f^{''}_{xy} $ liên tục, khi đó chúng bằng nhau. Vậy
+	\[ d^2f=f^{''}_{x^2}(dx)^2 +2f^{''}_{xy}xdy + f^{''}_{y^2}(dy)^2  \]
+	
+	Tương tự với hàm nhiều biến hơn
+	\[ d^2f(x,y,z)=f^{''}_{x^2}(dx)^2 + f^{''}_{y^2}(dy)^2 + f^{''}_{z^2}(dz)^2 +2f^{''}_{xy}dxdy + 2f^{''}_{xz}dxdz  +2f^{''}_{yz}dydz   \]
+	
+	Tương tự với vi phân cấp cao hơn
+	
+	- Cấp 3: \[ d^3f=f^{(3)}_{x^3}dx^3 + 3f^{(3)}_{x^2y}dx^2dy + 3f^{(3)}_{xy^2}dxdy^2 + f^{(3)}_{y^3}dy^3   \]
+	
+	- Cấp n: \[ d^nf=(\dfrac {\partial}{\partial x}dx + \dfrac {\partial}{\partial y}dy)^nf \]
+	
+	\subsection{Đạo hàm của hàm hợp}
+	\[ F(x,y)=f(u(x,y),v(x,y)), (x,y) \in D \]
+	
+	\textbf {Định lý:} Giả sử hàm $ f(u,v) $ có các đạo hàm riêng $ \dfrac {\partial f}{\partial u}, \dfrac {\partial f}{\partial v} $ liên tục trong $ \Delta $; các hàm $ u(x,y), v(x,y) $ có các đạo hàm riêng $ \dfrac {\partial u}{\partial x}, \dfrac {\partial u}{\partial y}, \dfrac {\partial v}{\partial x}, \dfrac {\partial v}{\partial y} $ liên tục trong D. Khi đó trong D tồn tại các đạo hàm riêng $ \dfrac {\partial F}{\partial x}, \dfrac {\partial F}{\partial y} $
+	\[ \begin{cases}
+		\dfrac {\partial F}{\partial x}= \dfrac {\partial F}{\partial u}\dfrac {\partial u}{\partial x}+\dfrac {\partial F}{\partial v}\dfrac {\partial v}{\partial x} \\[12pt]
+		\dfrac {\partial F}{\partial y}= \dfrac {\partial F}{\partial u}\dfrac {\partial u}{\partial y}+\dfrac {\partial F}{\partial v}\dfrac {\partial v}{\partial y}
+		\end{cases} \]
+	
+	\textbf {Chú ý:}
+	\begin{enumerate}[label=\roman*)]
+		\item Nếu $ z=f(x,y), y=y(x) $ thì $ z $ là hàm số hợp của $ x, z=f(x,y(x)) $ khi đó \[ \dfrac{dz}{dx} =\dfrac{\partial F}{\partial x}+\dfrac{\partial F}{\partial y}y^{'}(x)  \]
+		\item Nếu $ z=f(x,y), x=x(t), y=y(t) $ thì $ z $ là hàm số hợp của t. Khi đó \[ \dfrac{dz}{dt} =\dfrac{\partial F}{\partial x}x^{'}(t)+\dfrac{\partial F}{\partial y}y^{'}(t)  \]
+	\end{enumerate}
+
+	\subsection{Đạo hàm theo hướng. Gradient.}
+	Nếu $ \vec{l} $  là vectơ đơn vị hay $ |\vec{l}| = 1 $ thì
+	\[  \vec{l} = (a,b,c) = (\cos \alpha, \cos \beta, \cos \gamma) \]
+	
+	Nếu $ |\vec{l}| \ne 1 $ thì
+	\[ \vec{l_0} = |\vec{l}| = (\dfrac{a}{|\vec{l}|},\dfrac{b}{|\vec{l}|}, \dfrac{c}{|\vec{l}|})  \]
+	
+	\textbf {Định lý:} Nếu hàm số $ u=f(x,y,z) $ khả vi tại $ M_0(x_0,y_0,z_0) $ thì tại điểm $ M_0 $ hàm $ u $ có đạo hàm theo mọi hướng $ \vec{l} $ và ta có
+	\[ \dfrac {\partial u}{\partial \vec{l}}(M_0)=\dfrac {\partial (M_0)}{\partial x}\cos \alpha + \dfrac {\partial (M_0)}{\partial y}\cos \beta + \dfrac {\partial (M_0)}{\partial z}\cos \gamma \]
+	trong đó $ (\cos \alpha, \cos \beta, \cos \gamma) $ là các thành phần của $ \vec{l} $.
+	
+	\medskip
+	
+	\textbf {Định nghĩa Gradient:} Giả sử hàm $ u=f(x, y, z) $ có các đạo hàm riêng tại $ M_0(x_0,y_0,z_0) $. Ta gọi $ gradient $ của $ u $ là vectơ, ký hiệu bởi $ \overrightarrow{grad}u(M_0) $ xác định như sau \[ \overrightarrow{grad}u(M_0) = (\dfrac {\partial u(M_0)}{\partial x}, \dfrac {\partial u(M_0)}{\partial y}, \dfrac {\partial u(M_0)}{\partial z})  \]
+	
+	\textit {Hệ quả:}
+	\begin{enumerate}[label=\roman*)]
+		\item $ \dfrac {\partial u}{\partial \vec{l}}(M_0)=\overrightarrow{grad}u(M_0)\vec{l} $
+		\item $ -|\overrightarrow{grad}u(M_0)| \le \dfrac {\partial u}{\partial \vec{l}}(M_0) \le |\overrightarrow{grad}u(M_0)| $
+	\end{enumerate}
+
+	\subsection{Công thức Taylor}
+	\textbf {Định lý:} Giả sử hàm số $ u=f(x,y) $ có các đạo hàm riêng đến cấp $ n+1 $, liên tục trong một lân cận $ u $ nào đó của điểm $ M_0(x_0,y_0) $. Nếu điểm $ M_0(x_0 + \Delta x,y_0 + \Delta y)  $ cũng thuộc u thì
+	\begin{multline*} f(x_0 + \Delta x,y_0 + \Delta y) = f(x_0,y_0) + d^1f(x_0,y_0) + \dfrac{1}{2!}d^2f(x_0,y_0)+... \\ + \dfrac{1}{n!}d^nf(x_0,y_0) + \dfrac{1}{(n+1)!}d^{(n+1)}f(x_0 + \theta \Delta x ,y_0 + \theta \Delta y) \end{multline*}
+
+	\textit {Chú ý:} Trong công thức Taylor cho $ n=1 $ ta được
+	\[ f(x_0 + \Delta x,y_0 + \Delta y) - f(x_0,y_0) = df(x_0 + \theta \Delta x ,y_0 + \theta \Delta y), \theta \in (0,1)  \] công thức này gọi là công thức số gia giới nội đối với hàm $ f(x,y) $
+	
+	\subsection{Đạo hàm của hàm ẩn}
+	- Đối với hàm hai biến $ F(x,y(x)) = 0 $
+	\[ F^{'}_x(x, y(x))  + F^{'}_y(x, y(x))y^{'}(x) =0 \Rightarrow y^{'}(x)=-\dfrac{F^{'}_x(x, y(x))}{F^{'}_y(x, y(x))}  \] hay viết gọn \[ \dfrac{dy(x)}{dx} = -\dfrac{\dfrac {\partial F}{\partial x}}{\dfrac {\partial F}{\partial y}} \]
+	
+	- Đối với hàm ba biến $ F(x,y,z(x,y)) = 0 $
+	\[ \dfrac {\partial z}{\partial x} = -\dfrac{\dfrac {\partial F}{\partial x}}{\dfrac {\partial F}{\partial z}}, \dfrac {\partial z}{\partial y} = -\dfrac{\dfrac {\partial F}{\partial y}}{\dfrac {\partial F}{\partial z}} \]
+	
+	\section{Cực trị}
+	\subsection{Cực trị địa phương của hàm nhiều biến số}
+	
+	\textbf {Cách tính:}
+	
+	Bước 1: Tính các đạo hàm riêng cấp 1 và cấp 2 sau
+	\[ p=f^{'}_x(M) ; q=f^{'}_y(M) \]
+	\[ r=f^{''}_{x^2}(M) ; s=f^{''}_{xy}(M); r=f^{''}_{y^2}(M) \]
+	
+	Bước 2: Giải hệ phương trình $ \begin{cases} p=0 \\ q=0 \end{cases} $ tìm ra các điểm tới hạn $ M_1 $, $M_2$, ...
+	
+	Bước 3: Kiểm tra dấu của biểu thức $ s^2-rt $
+	
+	- Nếu $ s^2-rt <0$ thì $ f(x,y) $ đạt cực trị tại $ M_i $. $ M_i $ là cực tiểu nếu $ r>0 $, là cực đại nếu $ r<0 $.
+	
+	- Nếu $ s^2-rt >0$ thì $ f(x,y) $ không đạt cực trị tại $ M_i $.
+	
+	- Nếu $ s^2-rt =0$ thì $ f(x,y) $ có thể đạt hoặc không đạt cực trị tại $ M_i $ (điểm nghi ngờ).
+	
+	\subsection{Cực trị có điều kiện}
+	\textbf {Bài toán:} Tìm cực trị có điều kiện của hàm $ u=f(x,y) $ với điều kiện $ g(x,y)=0 $
+	
+	\textbf {Cách tính:}
+	
+	Bước 1: Lập hàm Lagrange  \[ L(x,y,\lambda) = f(x,y) + \lambda g(x,y) \]
+
+	\textit {Chú ý: Có bao nhiêu điều kiện thì có bấy nhiêu tham số trong hàm Largrange}
+
+
+	Bước 2: Giải hệ phương trình
+	\[ \begin{cases}
+		L^{'}_x=0 \\
+		L^{'}_y=0 \\
+		L^{'}_\lambda=0 \\
+	\end{cases} \]
+	
+	Nghiệm của hệ chính là tọa độ điểm dừng $ M_0(x_0,y_0,z_0) $
+	
+	Bước 3:
+	
+	* Cách 1: Xét dấu của vi phân cấp 2 
+	
+	- Nếu $ d^2L(M_0) >0 $ thì $ M_0 $ là cực đại.
+	
+	- Nếu $ d^2L(M_0) <0 $ thì $ M_0 $ là cực tiểu.
+	
+	- Nếu $ d^2L(M_0) =0 $ thì $ M_0 $ thì chưa kết luận được.
+	
+	\medskip
+	
+	* Cách 2: Cho $ x, y $ và các số gia $ \Delta x, \Delta y $. Xét dấu của biểu thức \[ \Delta u(M_0) = f(x_0+\Delta x, y_0+\Delta y) - f(x_0,y_0) , \Delta x^2 + \Delta y^2 \ne 0 \]
+	
+	- Nếu $ \Delta u(M_0) >0 $ thì $ M_0 $ là cực đại.
+	
+	- Nếu $ \Delta u(M_0) <0 $ thì $ M_0 $ là cực tiểu.
+	
+	- Nếu $ \Delta u(M_0) =0 $ thì $ M_0 $ thì chưa kết luận được.
+	
+	\subsection{Giá trị lớn nhất giá trị nhỏ nhất của hàm số}
+	Với đề bài yêu cầu tìm giá trị lớn nhất, giá trị nhỏ nhất trên miền đóng, giới nội thì ta tìm các cực trị địa phương thuộc miền đang xét và các cực trị có điều kiện tại biên của miền đang xét. So sánh các giá trị để tìm $ min $, $ max $.
+	
+\end{document}
